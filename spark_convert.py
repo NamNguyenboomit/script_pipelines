@@ -57,44 +57,7 @@ def convert_to_parquet(folder_path, output_folder):
         print(f"Converted: {file_name} -> {target_name}")
 
 
-def read_parquet_file(folder_path, df):
-    # Define schema for data
-    schema = StructType([
-        StructField("Store", StringType(), True),
-        StructField("Cust No", StringType(), True),
-        StructField("Cust Card No", StringType(), True),
-        StructField("Cust Type", StringType(), True),
-        StructField("Remark", StringType(), True),
-        StructField("Card Online Fg", StringType(), True),
-        StructField("Sale Dy", StringType(), True),
-        StructField("Pos No", StringType(), True),
-        StructField("Trd No", StringType(), True),
-        StructField("Cust Nm", StringType(), True),
-        StructField("Prod Cd", StringType(), True),
-        StructField("Srcmk Cd", StringType(), True),
-        StructField("Prod Nm", StringType(), True),
-        StructField("Prod Type", StringType(), True),
-        StructField("L1 Cd", StringType(), True),
-        StructField("L1 Nm", StringType(), True),
-        StructField("L2 Cd", StringType(), True),
-        StructField("L2 Nm", StringType(), True),
-        StructField("L3 Cd", StringType(), True),
-        StructField("L3 Nm", StringType(), True),
-        StructField("L4 Cd", StringType(), True),
-        StructField("L4 Nm", StringType(), True),
-        StructField("Buy Amt", LongType(), True),
-        StructField("Sale Prc", LongType(), True),
-        StructField("Sale Qty", IntegerType(), True),
-        StructField("Sale Amt", LongType(), True),
-        StructField("Profit Rt", DoubleType(), True),
-        StructField("Profit Amt", LongType(), True),
-        StructField("Vat", LongType(), True),
-        StructField("Disc", LongType(), True),
-        StructField("Net Sale", LongType(), True),
-        StructField("Order ID", StringType(), True),
-        StructField("Return", StringType(), True)
-    ])
-    
+def read_parquet_file(folder_path, df):    
     # read file
     try:  
         df = (
